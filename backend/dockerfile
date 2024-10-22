@@ -1,6 +1,9 @@
 # Set base image
 FROM node:16-alpine3.16
 
+# Create a non-root user and group
+RUN addgroup -S backend-app-group && adduser -S backenduser -G backend-app-group
+
 # Set the working directory
 WORKDIR /backend
 
