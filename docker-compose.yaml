@@ -14,7 +14,7 @@ services:
   chris-yolo-client:
     image: chriskilelo/chris-yolo-client:v1.0.0
     build: ./client
-    container_name: brian-yolo-client
+    container_name: chris-yolo-client
     stdin_open: true
     tty: true
     ports:
@@ -28,7 +28,7 @@ services:
   chris-yolo-backend:
     image: chriskilelo/chris-yolo-backend:v1.0.0
     build: ./backend
-    container_name: brian-yolo-backend
+    container_name: chris-yolo-backend
     stdin_open: true
     tty: true
     restart: always
