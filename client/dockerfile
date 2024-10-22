@@ -21,11 +21,14 @@ RUN npm run build
 # Production stage
 FROM node:16-alpine3.16 as production-stage
 
+# Create a non-root user
+RUN addgroup client-app-group && adduser -S clientuser -G client-app-group
+
 # Set the working directory for the production environment
 WORKDIR /client
+RUN chown clientuser:client-app-group /client
 
-# Create a non-root user and switch to it
-RUN addgroup client-app-group && adduser -S clientuser -G client-app-group
+# Switch to the non-root user
 USER clientuser
 
 # Copy only the necessary files from the build stage
