@@ -11,7 +11,7 @@ version: "3.8"
 services:
 
   #Builds the frontend Docker image and creates the frontend microservice
-  brian-yolo-client:
+  chris-yolo-client:
     image: chriskilelo/chris-yolo-client:v1.0.0
     build: ./client
     container_name: brian-yolo-client
