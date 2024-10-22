@@ -20,12 +20,12 @@ services:
     ports:
       - "3000:3000"
     depends_on: 
-      - brian-yolo-backend
+      - chris-yolo-backend
     networks:
       - app-net
 
   #Builds the backend Docker image and creates the backend microservice
-  brian-yolo-backend:
+  chris-yolo-backend:
     image: chriskilelo/chris-yolo-backend:v1.0.0
     build: ./backend
     container_name: brian-yolo-backend
