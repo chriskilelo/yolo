@@ -23,6 +23,14 @@ Vagrant.configure("2") do |config|
     
     # Add the 'vagrant' user to the 'docker' group, allowing Docker commands to run without sudo
     sudo usermod -aG docker vagrant    
-  SHELL  
+  SHELL
+
+    # Forward port 80 on the VM to port 8080 on the host (for the frontend application)
+    config.vm.network "forwarded_port", guest: 80, host: 8080  
+    # Forward port 5000 on the VM to port 1234 on the host (for the backend application)
+    config.vm.network "forwarded_port", guest: 5000, host: 1234 
+    # Forward MongoDB's default port 27017 on the VM to port 27017 on the host
+    config.vm.network "forwarded_port", guest: 27017, host: 27017
+    
 
 end
