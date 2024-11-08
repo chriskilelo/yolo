@@ -46,6 +46,9 @@ Vagrant.configure("2") do |config|
     ansible.extra_vars = {
       ansible_python_interpreter: "/usr/bin/python3"  # Ensure Python 3 is used by Ansible
     }
-  end  
+  end
+
+  # Configure vagrant to reboot the VM to apply system-level changes that require a system restart
+  config.vm.provision "shell", inline: "sudo reboot", run: "always"  
 
 end
