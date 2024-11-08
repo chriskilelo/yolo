@@ -1,6 +1,6 @@
 app-mongo-data
 app-mongo-data/
-vars.yml
+app_variables.yaml
 vault.yml
 .vagrant/
 .vscode/
