@@ -25,12 +25,15 @@ Vagrant.configure("2") do |config|
     sudo usermod -aG docker vagrant    
   SHELL
 
-    # Forward port 80 on the VM to port 8080 on the host (for the frontend application)
-    config.vm.network "forwarded_port", guest: 80, host: 8080  
-    # Forward port 5000 on the VM to port 1234 on the host (for the backend application)
-    config.vm.network "forwarded_port", guest: 5000, host: 1234 
-    # Forward MongoDB's default port 27017 on the VM to port 27017 on the host
-    config.vm.network "forwarded_port", guest: 27017, host: 27017
-    
+  # Forward port 80 on the VM to port 8080 on the host (for the frontend application)
+  config.vm.network "forwarded_port", guest: 80, host: 8080  
+  # Forward port 5000 on the VM to port 1234 on the host (for the backend application)
+  config.vm.network "forwarded_port", guest: 5000, host: 1234 
+  # Forward MongoDB's default port 27017 on the VM to port 27017 on the host
+  config.vm.network "forwarded_port", guest: 27017, host: 27017
+
+  # Sync the project directory on the host to the /vagrant directory in the VM
+  # This allows access to code and project files within the VM
+  config.vm.synced_folder ".", "/vagrant"    
 
 end
