@@ -5,7 +5,8 @@
   variables_file:
     - app_variables.yaml  
   roles: 
-    - frontend-deployment
-    - setup-mongodb   
+    - shared-configurations
+    - setup-mongodb
     - backend-deployment
+    - frontend-deployment     
     
