@@ -25,10 +25,10 @@ Vagrant.configure("2") do |config|
     sudo usermod -aG docker vagrant    
   SHELL
 
-  # Forward port 80 on the VM to port 8080 on the host (for the frontend application)
-  config.vm.network "forwarded_port", guest: 80, host: 8080  
+  # Forward port 3000 on the VM to port 3000 on the host (for the frontend application)
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
   # Forward port 5000 on the VM to port 1234 on the host (for the backend application)
-  config.vm.network "forwarded_port", guest: 5000, host: 1234 
+  config.vm.network "forwarded_port", guest: 5000, host: 5000 
   # Forward MongoDB's default port 27017 on the VM to port 27017 on the host
   config.vm.network "forwarded_port", guest: 27017, host: 27017
 
