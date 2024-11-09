@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
     # Specify the main Ansible playbook to run
     ansible.playbook = "tasklist.yaml"
     # Specify the inventory file if needed (list of hosts for Ansible to manage)
-    ansible.inventory_path = "inventory"
+    ansible.inventory_path = "inventory.yaml"
     # Define extra variables to pass to Ansible (e.g., the Python interpreter to use)
     ansible.extra_vars = {
       ansible_python_interpreter: "/usr/bin/python3"  # Ensure Python 3 is used by Ansible
