@@ -1,0 +1,5 @@
+---
+- name: Pull image from repository
+  docker_image:
+    name: chriskilelo/chris-yolo-client:v1.0.1
+    source: pull
