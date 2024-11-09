@@ -6,7 +6,7 @@
 
 - name: Create Node.js Backend Container
   docker_container:
-    name: brian-yolo-backend
+    name: chris-yolo-backend
     image: chriskilelo/chris-yolo-backend:v1.0.1
     networks:
       - name: app-net
