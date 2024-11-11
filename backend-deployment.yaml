@@ -15,7 +15,7 @@ spec:
         app: backend
     spec:
       containers:
-        - name: backend
+        - name: chris-yolo-backend
           image: chriskilelo/chris-yolo-backend:v1.0.1
           command: ["npm", "start"] 
           ports:
