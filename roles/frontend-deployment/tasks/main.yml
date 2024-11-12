@@ -3,3 +3,14 @@
   docker_image:
     name: chriskilelo/chris-yolo-client:v1.0.4
     source: pull
+
+- name: Create Node.js Frontend/Client Container
+  docker_container:
+    name: chris-yolo-client
+    image: chriskilelo/chris-yolo-client:v1.0.4
+    networks:
+      - name: app-net
+    ports:
+      - "80:80"
+    command: "npm start"
+  become: yes     
